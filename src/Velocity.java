@@ -1,6 +1,4 @@
 
-import java.lang.*;
-
 /**
  * Holds the velocity for an object.
  *
@@ -66,7 +64,7 @@ public class Velocity {
     public void changeDirection(int direction) {
         if (Constants.checkDirectionExists(direction)) {
             throw new IllegalArgumentException(
-                "Illegal direction receivew in Velocity constructor."
+                "Illegal direction received in Velocity constructor."
             );
         }
         this.direction = direction;

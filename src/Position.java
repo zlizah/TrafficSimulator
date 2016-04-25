@@ -21,12 +21,12 @@ public class Position {
     }
     
     /* Returns array{distance x, distance y}*/
-    public int[] distanceTo(Position p) {
+    public double distanceTo(Position p) {
         int[] coordinates = p.getCoordinates();
-        return new int[]{
-            Math.abs(coordinates[0] - x),
-            Math.abs(coordinates[1] - y)
-        };
+        return Math.sqrt(
+            (double)((coordinates[0] - x) * (coordinates[0] - x)) +
+            (double)((coordinates[1] - y) * (coordinates[1] - y))
+        );
     }
     
     /* Updates this position based on current velocity */
