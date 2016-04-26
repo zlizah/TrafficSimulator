@@ -1,4 +1,6 @@
 
+import java.util.TreeSet;
+
 /**
  * A road between RoadConenctors.
  */
@@ -18,16 +20,16 @@ public class Road {
     }
     
     /* Fetches the queue of vehicles heading for the given rc from this road. */
-    public VehicleQueue getCarQueue(RoadConnector rc) {
+    public TreeSet<Vehicle> getCarQueue(RoadConnector rc) {
         if (rc == null) {
             throw new IllegalArgumentException("Parameter was null in "
                 + "getCarQueue of Road.java");
         }
         if (rc.equals(left)) {
-            return leftbound;
+            return leftbound.getOrderedQueue(rc.getPosition());
         }
         if (rc.equals(right)) {
-            return rightbound;
+            return rightbound.getOrderedQueue(rc.getPosition());
         }
         return null;
     }

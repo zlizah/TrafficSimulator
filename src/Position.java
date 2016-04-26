@@ -20,8 +20,12 @@ public class Position {
         y = coordinates[1];
     }
     
-    /* Returns array{distance x, distance y}*/
+    /* Returns the euclidian distance between this position and the parameter */
     public double distanceTo(Position p) {
+        if (p == null) {
+            throw new IllegalArgumentException("Error in distanceTo in "
+                + "Position.java, parameter was null.");
+        }
         int[] coordinates = p.getCoordinates();
         return Math.sqrt(
             (double)((coordinates[0] - x) * (coordinates[0] - x)) +

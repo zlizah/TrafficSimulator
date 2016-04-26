@@ -27,4 +27,9 @@ public class Vehicle {
         //Save travel status in history
         record.addRecord(currentPosition, velocity, time);
     }
+    
+    /* Returns the current position for this Vehicle */
+    public Position getPosition() {
+        return currentPosition;
+    }
 }
